@@ -1,0 +1,112 @@
+<html>
+<script src="rafael.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<style type="text/css" media="screen">
+         #canvas {
+                height: 1500px;
+                left: 300px;
+                margin: -150px 0 0 -300px;
+                position: absolute;
+                top: 100px;
+                width: 700px;
+            }
+            #paper{
+                height: 300px;
+                left: 1000px;
+                position: absolute;
+				left: 100px;
+				top:300px;
+                width: 300px;
+            }
+			#paper2{
+			
+			position:absolute;
+			top:25%;
+			padding:5px;
+			left:850px;
+			width:300px;
+			--webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border: 3px solid #2f2f2f;
+			
+			}
+			h2,h3{text-align:center;}
+			
+             
+        </style>
+<script> 
+//window.onload = function () {
+	$(function(){
+	var r = Raphael("canvas", 1500,1500);
+var attr = {
+                //"stroke": "#666",
+                "stroke-width": 1,
+                "stroke-linejoin": "round",
+				"fill": "#000000"
+            };
+			var t="t-165,-30";
+var figure=r.image("images4.png",100,117,600,900);
+function capitaliseFirstLetter(string)
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
+//r.path("m"+x+","+y+" l500,100");
+
+//document.getElementById("paper2").innerHTML=data["Encounter1"]["output"];			
+			var whereAt= (function(){
+    if(window.pageXOffset!= undefined){
+        return function(ev){
+            return [ev.clientX+window.pageXOffset,
+            ev.clientY+window.pageYOffset];
+        }
+    }
+    else return function(){
+        var ev= window.event,
+        d= document.documentElement, b= document.body;
+        return [ev.clientX+d.scrollLeft+ b.scrollLeft,
+        ev.clientY+d.scrollTop+ b.scrollTop];
+    }
+})()
+var jsonarray=[];
+var jsonObj={};
+var locObj={};
+document.ondblclick=function(e){ 
+var organ = prompt("organ"); 
+if(organ==""){alert("Please Enter a value"); return;}
+organ=capitaliseFirstLetter(organ);
+var location=whereAt(e); 
+locObj['x']=location[0];
+locObj['y']=location[1]+50;
+r.circle(locObj['x'],locObj['y'],"7").attr({fill: "#3304B4",opacity:"0.5"});
+jsonObj[organ]=locObj;//jsonarray.push(jsonObj);
+console.log(JSON.stringify(locObj));
+document.getElementById("paper2").innerHTML+="\""+organ+"\":"+JSON.stringify(locObj)+",";
+
+
+
+};
+
+
+
+//}
+});
+</script>
+<body>
+
+<div id="canvas">
+
+            </div>
+			<div id="paper2"><h2>Dbl Click on any body part and enter the organ name in the pop up box.</h2></div>
+			<div id="paper"></div>
+			
+			
+			
+			
+			
+</body>
+
+
+</html>
