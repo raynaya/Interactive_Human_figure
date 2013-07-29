@@ -29,4 +29,4 @@ The key is never used it only needs to be unique.
 
 Thats it! The function exec will read from the data object and display as planned.
 
-If you are realigning the divs and image then will have to adjust the co-ordinates of the nodes but thats a one time job.
+If you are realigning the divs and image then will have to adjust the co-ordinates of the nodes but thats a one time job. Will have modify the x and y values once before drawing the nodes.
