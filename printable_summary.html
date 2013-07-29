@@ -72,6 +72,8 @@ function exec(){
 var location={"Liver":{"x":404,"y":438},"Spleen":{"x":545,"y":438},"Heart":{"x":483,"y":376},"Lungs":{"x":410,"y":358},"Lungs":{"x":539,"y":355},"Aorta":{"x":468,"y":323},"Kidneys":{"x":522,"y":465},"Kidneys":{"x":429,"y":463},"Stomach":{"x":507,"y":413},"Pancreas":{"x":456,"y":434},"Abdominal Aorta":{"x":473,"y":467},"Small Intestine":{"x":484,"y":481},"Appendix":{"x":424,"y":508},"Urinay Bladder":{"x":474,"y":534},"Genitalia":{"x":486,"y":548},"Brain":{"x":460,"y":164}};
  // var keys = Object.keys(location);
  // console.log(JSON.stringify(keys)); to get the list of organ values
+ 
+ 
   var data={"E1":{"organ":"Brain","input":"Input","output":"40% blockage"},"E2":{"organ":"Lungs","input":"Input","output":"Throat-Infection"}};
         var body={};
         var i=0;
@@ -80,11 +82,8 @@ var location={"Liver":{"x":404,"y":438},"Spleen":{"x":545,"y":438},"Heart":{"x":
 		
 		(function(i){
         var x=location[data[data1]["organ"]]["x"];var  y=location[data[data1]["organ"]]["y"];var rad=8;x=x;
-        
-        
-        
+            
         output[i]=data[data1]["output"];
-        //alert(output[i]);
         input[i]=data[data1]["input"];
 		organ[i]=data[data1]["organ"];
 		var j=i+1;
@@ -106,7 +105,7 @@ var location={"Liver":{"x":404,"y":438},"Spleen":{"x":545,"y":438},"Heart":{"x":
 			    document.body.style.cursor="auto";
 				document.getElementById(organ[i]).style.opacity="0.5";
 
-		//document.getElementById("paper2").innerHTML="<h2>Hover the mouse pointer over the black coloured nodes to see problems in the specific regions.</h2>";
+		
 		});
 		
         })(i);
@@ -114,24 +113,8 @@ var location={"Liver":{"x":404,"y":438},"Spleen":{"x":545,"y":438},"Heart":{"x":
         i++;
         }
 		}
-//r.path("m"+x+","+y+" l500,100");
 
-//document.getElementById("paper2").innerHTML=data["Encounter1"]["output"];			
-			var whereAt= (function(){
-    if(window.pageXOffset!= undefined){
-        return function(ev){
-            return [ev.clientX+window.pageXOffset,
-            ev.clientY+window.pageYOffset];
-        }
-    }
-    else return function(){z
-        var ev= window.event,
-        d= document.documentElement, b= document.body;
-        return [ev.clientX+d.scrollLeft+ b.scrollLeft,
-        ev.clientY+d.scrollTop+ b.scrollTop];
-    }
-})()
-//document.ondblclick=function(e){alert(whereAt(e))};
+
 
 
 });
