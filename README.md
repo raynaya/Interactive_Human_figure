@@ -6,7 +6,7 @@ This module is used to pin point issues and solutions on a human figure captured
 patient input process and the analysis made by the caregiver.
 
 Possible list of organ values that can be used
-===============================================
+----------------------------------------------
 
 ["Liver","Spleen","Heart","Lungs","Aorta","Kidneys","Stomach","Pancreas",
 "Abdominal Aorta","Small Intestine","Appendix","Urinay Bladder","Genitalia","Brain"] 
@@ -14,13 +14,13 @@ Possible list of organ values that can be used
 Files to be included : 
 --------------------
 
-Rafael.js
-images4.png
+Rafael.js, 
+images4.png, 
 printable_summary
 
 
 How data is to be recieved,stored and manipulated:
-===================================================
+-------------------------------------------------
 
 Inside the printable_summary file you will find the object "data".
 
